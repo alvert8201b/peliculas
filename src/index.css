@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Space Grotesk", sans-serif;
+
+  --color-background-lowest: #0e0e0e;
+  --color-surface-dim: #131313;
+  --color-surface-container: #1b1b1b;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353535;
+  
+  --color-neon-magenta: #ffb1c3;
+  --color-neon-magenta-dark: #ff4b89;
+  --color-neon-cyan: #00dbe9;
+  
+  --color-primary: #ffb1c3;
+  --color-primary-container: #ff4b89;
+  --color-on-primary: #66002c;
+  
+  --color-outline-variant: #5c3f45;
+}
+
+@layer base {
+  body {
+    @apply bg-background-lowest text-slate-200 antialiased selection:bg-neon-magenta/30;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .glass-morphism {
+    @apply bg-surface-dim/60 backdrop-blur-2xl border border-white/10;
+  }
+  
+  .neon-glow-magenta {
+    box-shadow: 0 0 20px rgba(255, 177, 195, 0.2);
+  }
+
+  .neon-text-glow {
+    text-shadow: 0 0 10px rgba(255, 177, 195, 0.5);
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
